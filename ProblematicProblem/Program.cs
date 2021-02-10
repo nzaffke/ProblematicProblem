@@ -6,6 +6,7 @@ namespace ProblematicProblem
 {
      class Program
      {
+        static string userAnswer;
         static bool cont = true;
         static List<string> activities = new List<string>() { "Movies,", "Paintball,", "Bowling,", "Lazer Tag,", "LAN Party,", "Hiking,", "Axe Throwing,", "Wine Tasting" };
 
@@ -14,20 +15,15 @@ namespace ProblematicProblem
             Random rng = new Random();
             Console.Write("Hello, welcome to the random activity generator! \n " +
                 "Would you like to generate a random activity? yes/no: ");
-            bool cont;
-            var contResponse = Console.ReadLine().ToLower();
-
+             userAnswer = Console.ReadLine().ToLower();
            
 
-
-                if (contResponse == "yes")
+                if (userAnswer.ToLower() != "yes")
                 {
-                    cont = true;
+                Console.WriteLine("Goodbye");
+                return;
                 }
-                else
-                {
-                    cont = false;
-                }
+               
 
                 Console.WriteLine();
 
