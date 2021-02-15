@@ -49,28 +49,29 @@ namespace ProblematicProblem
                     }
 
                     Console.WriteLine();
+
                     Console.Write("Would you like to add any activities before we generate one? yes/no: ");
                     bool addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
 
                     Console.WriteLine();
 
-                    while (addToList)
+                   while (addToList)
+                {
+                    Console.Write("What would you like to add? ");
+                    string userAddition = Console.ReadLine();
+
+                    activities.Add(userAddition);
+
+                    foreach (string activity in activities)
                     {
-                        Console.Write("What would you like to add? ");
-                        string userAddition = Console.ReadLine();
+                        Console.Write($"{activity} ");
+                        Thread.Sleep(250);
+                    }
 
-                        activities.Add(userAddition);
-
-                        foreach (string activity in activities)
-                        {
-                            Console.Write($"{activity} ");
-                            Thread.Sleep(250);
-                        }
-
-                        Console.WriteLine();
-                        Console.WriteLine("Would you like to add more? yes/no: ");
-                        addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
-                }
+                    Console.WriteLine();
+                    Console.WriteLine("Would you like to add more? yes/no: ");
+                    addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
+                   }
                 }
 
                 while (cont)
